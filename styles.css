@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+
+#bar-container {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    padding: 25px 0 25px 0;
+}
+
+.bar {
+    border: 2px solid;
+    padding: 15px 0 15px 0;
+
+    width: 50%;
+    /* min-width: 1%;
+    max-width: 100%; */
+}
+
+.bar p {
+    text-align: center;
+    font-size: 2em;
+    margin: 0;
+}
+
+.resize {
+    border: 2px solid;
+    padding: 10px;
+}
