@@ -14,8 +14,10 @@ body {
     padding: 15px 0 15px 0;
 
     width: 50%;
-    /* min-width: 1%;
-    max-width: 100%; */
+    min-width: 1%;
+    max-width: 100%;
+
+    pointer-events: none;
 }
 
 .bar p {
