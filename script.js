@@ -8,31 +8,29 @@ let mousePosition = 0;
 resize1.addEventListener('mousedown', function(e) {
     e.preventDefault();
     document.onmousemove = function(e) {
-        mousePosition = ((e.clientX - barContainer.getBoundingClientRect().left) / barContainer.getBoundingClientRect().width) * 100;
-        // console.log("mouse location:", mousePosition);
+        mousePosition = (((e.pageX - barContainer.offsetLeft) / (barContainer.offsetWidth)) * 100);
+        console.log(e.pageX + " - " + mousePosition);
         
         switch(true) {
             case (mousePosition <= 1):
-                console.log("a");
                 bar1.style.width = "1%";
                 bar2.style.width = "99%";
+                bar1.getElementsByTagName('p')[0].innerHTML = "1.00%";
+                bar2.getElementsByTagName('p')[0].innerHTML = "99.00%";
                 break;
-            case (mousePosition > 1 && mousePosition < 99):
-                console.log("b");
+            case (mousePosition >= 99):
+                bar1.style.width = "99%";
+                bar2.style.width = "1%";
+                bar1.getElementsByTagName('p')[0].innerHTML = "99.00%";
+                bar2.getElementsByTagName('p')[0].innerHTML = "1.00%";
+                break;
+            default:
                 bar1.style.width = mousePosition + "%";
                 bar1.getElementsByTagName('p')[0].innerHTML = mousePosition.toFixed(2) + "%";
 
                 bar2.style.width = 100 - mousePosition + "%";
                 bar2.getElementsByTagName('p')[0].innerHTML = (100 - mousePosition).toFixed(2) + "%";
-                break;
-            case ((100 - mousePosition) >= 99):
-                console.log("c");
-                console.log("test");
-                bar1.style.width = "99%";
-                bar2.style.width = "1%";
-                break;
         }
-
         
     }
 });
