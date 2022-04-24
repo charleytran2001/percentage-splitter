@@ -3,12 +3,18 @@ let bar1 = document.getElementsByClassName('bar')[0];
 let bar2 = document.getElementsByClassName('bar')[1];
 let resize1 = document.getElementsByClassName('resize')[0];
 
+let value = document.getElementById('value');
+
+function valueChange() {
+
+}
+
 let mousePosition = 0;
 
 resize1.addEventListener('mousedown', function(e) {
     e.preventDefault();
     document.onmousemove = function(e) {
-        mousePosition = (((e.pageX - barContainer.offsetLeft) / (barContainer.offsetWidth)) * 100);
+        mousePosition = ((e.pageX - barContainer.offsetLeft - (resize1.offsetWidth / 2)) / (barContainer.offsetWidth - resize1.offsetWidth)) * 100;
         console.log(e.pageX + " - " + mousePosition);
         
         switch(true) {

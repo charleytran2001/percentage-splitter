@@ -3,10 +3,10 @@ body {
 
 }
 
-div {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+#page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #bar-container {
@@ -16,7 +16,7 @@ div {
 }
 
 .bar {
-    border: 2px solid;
+    outline: 2px solid;
     padding: 15px 0 15px 0;
 
     width: 50%;
@@ -29,6 +29,17 @@ div {
 }
 
 .resize {
-    border: 2px solid;
+    outline: 2px solid;
     padding: 10px;
+}
+
+#info {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+.value-split {
+    text-align: center;
+    font-size: 2em;
 }
